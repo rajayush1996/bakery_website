@@ -1,0 +1,12 @@
+{
+  "admin": {
+    "email": "admin@bakery.com",
+    "password": "admin123"
+  },
+  "customer": {
+    "email": "test@example.com",
+    "password": "test123",
+    "name": "Test User",
+    "phone": "9876543210"
+  }
+}

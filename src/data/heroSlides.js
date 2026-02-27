@@ -1,0 +1,38 @@
+export const heroSlides = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80",
+    title: "Freshly Baked with Love",
+    subtitle: "in Asansol",
+    description: "Handcrafted cakes for every special moment. Made with the finest ingredients, baked with passion.",
+    cta: "Order Now",
+    ctaLink: "/cakes",
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1549112166-b1bffddb15e9?w=1200&q=80",
+    title: "Dream Wedding Cakes",
+    subtitle: "For Your Perfect Day",
+    description: "Bespoke wedding cakes crafted to match your vision. Elegant, delicious, and unforgettable.",
+    cta: "Explore Wedding Cakes",
+    ctaLink: "/cakes",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1200&q=80",
+    title: "Celebrate Every Moment",
+    subtitle: "With Our Special Cakes",
+    description: "Birthday cakes, anniversary cakes, custom cakes — we create magic for all your celebrations.",
+    cta: "View Menu",
+    ctaLink: "/cakes",
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=1200&q=80",
+    title: "Custom Cupcakes & Pastries",
+    subtitle: "Little Bites of Heaven",
+    description: "Freshly baked cupcakes and pastries that melt in your mouth. Perfect for parties and gifting.",
+    cta: "Shop Now",
+    ctaLink: "/cakes",
+  },
+];

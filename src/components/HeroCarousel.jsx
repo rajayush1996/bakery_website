@@ -1,22 +1,38 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCarousel } from "@/context/CarouselContext";
 
+const slideVariants = {
+  enter: (direction) => ({ x: direction > 0 ? 300 : -300, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (direction) => ({ x: direction > 0 ? -300 : 300, opacity: 0 }),
+};
+
 export default function HeroCarousel() {
   const { activeSlides } = useCarousel();
   const [current, setCurrent] = useState(0);
+  const directionRef = useRef(1);
 
   // Clamp current index when slides change
   const safeIndex = activeSlides.length > 0 ? current % activeSlides.length : 0;
 
   const next = useCallback(
-    () => setCurrent((c) => (c + 1) % (activeSlides.length || 1)),
+    () => {
+      directionRef.current = 1;
+      setCurrent((c) => (c + 1) % (activeSlides.length || 1));
+    },
     [activeSlides.length]
   );
-  const prev = () =>
+  const prev = () => {
+    directionRef.current = -1;
     setCurrent((c) => (c - 1 + (activeSlides.length || 1)) % (activeSlides.length || 1));
+  };
+  const goToSlide = (i) => {
+    directionRef.current = i > safeIndex ? 1 : -1;
+    setCurrent(i);
+  };
 
   useEffect(() => {
     if (activeSlides.length < 2) return;
@@ -43,13 +59,15 @@ export default function HeroCarousel() {
 
   return (
     <div className="relative h-[88vh] min-h-[540px] overflow-hidden bg-dark-brown">
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} custom={directionRef.current} mode="wait">
         <motion.div
           key={slide.id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          custom={directionRef.current}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="absolute inset-0"
         >
           {/* Background Image */}
@@ -167,7 +185,7 @@ export default function HeroCarousel() {
           {activeSlides.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => goToSlide(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${
                 i === safeIndex ? "w-10 h-3 bg-primary" : "w-3 h-3 bg-white/60 hover:bg-white"

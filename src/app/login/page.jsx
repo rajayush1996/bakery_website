@@ -15,7 +15,7 @@ export default function LoginPage() {
     e.preventDefault();
     const result = login(form.email, form.password);
     if (result.success) {
-      router.push(result.role === "admin" ? "/admin" : "/");
+      router.push(result.role === "admin" ? "/admin" : "/cart");
     } else {
       setError(result.message || "Login failed");
     }
@@ -38,7 +38,7 @@ export default function LoginPage() {
         <div className="bg-cream rounded-xl p-4 mb-6 text-xs text-gray-500">
           <p className="font-medium text-dark-brown mb-1">Demo Credentials:</p>
           <p>Admin: admin@bakery.com / admin123</p>
-          <p>Customer: any email / any password</p>
+          <p>Customer: demo@bakery.com / demo123</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

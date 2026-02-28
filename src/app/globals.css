@@ -16,6 +16,12 @@ body {
   65% { transform: translate(-4px, -8px) rotate(-6deg); }
 }
 
+@keyframes floatPetalReverse {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  30% { transform: translate(-6px, -18px) rotate(-8deg); }
+  65% { transform: translate(4px, -8px) rotate(6deg); }
+}
+
 .animate-float-petal {
   animation-name: floatPetal;
   animation-timing-function: ease-in-out;

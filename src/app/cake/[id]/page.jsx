@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,7 +8,8 @@ import { useCart } from "@/context/CartContext";
 import CakeCard from "@/components/CakeCard";
 
 export default function CakeDetailPage({ params }) {
-  const cake = cakes.find((c) => c.id === parseInt(params.id));
+  const resolvedParams = React.use(params);
+  const cake = cakes.find((c) => c.id === parseInt(resolvedParams.id));
   const defaultWeight = cake ? (cake.weights[1] || cake.weights[0]) : null;
 
   const [selectedWeight, setSelectedWeight] = useState(defaultWeight);

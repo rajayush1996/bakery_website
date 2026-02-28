@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
   const { cartItems, subtotal, clearCart } = useCart();
+  const { isLoggedIn } = useAuth();
   const router = useRouter();
   const deliveryCharge = subtotal > 0 ? (subtotal >= 500 ? 0 : 50) : 0;
   const total = subtotal + deliveryCharge;
@@ -16,6 +18,12 @@ export default function CheckoutPage() {
   const [payment, setPayment] = useState("COD");
   const [placed, setPlaced] = useState(false);
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (!isLoggedIn) router.push("/login?redirect=/checkout");
+  }, [isLoggedIn, router]);
+
+  if (!isLoggedIn) return null;
 
   const validate = () => {
     const e = {};

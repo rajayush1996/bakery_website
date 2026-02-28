@@ -20,6 +20,7 @@ const config: Config = {
       },
       fontFamily: {
         heading: ["Georgia", "serif"],
+        dancing: ["Dancing Script", "cursive"],
       },
     },
   },

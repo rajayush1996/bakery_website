@@ -90,10 +90,10 @@ export default function HeroCarousel() {
                   </p>
                 )}
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-3 drop-shadow-lg">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-dancing font-bold text-white leading-tight mb-3 drop-shadow-lg">
                   {slide.title}
                 </h1>
-                <h2 className="text-2xl sm:text-3xl font-semibold text-accent mb-4 drop-shadow">
+                <h2 className="text-2xl sm:text-3xl font-dancing font-semibold text-accent mb-4 drop-shadow">
                   {slide.subtitle}
                 </h2>
                 <p className="text-gray-200 text-lg mb-6 leading-relaxed max-w-xl">

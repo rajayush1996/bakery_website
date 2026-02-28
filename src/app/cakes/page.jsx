@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CakeCard from "@/components/CakeCard";
+import FlowerPetals from "@/components/FlowerPetals";
 import { cakes, categories } from "@/data/cakes";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -22,11 +23,12 @@ function CakesContent() {
   const allCategories = ["All", ...categories.map((c) => c.name)];
 
   return (
-    <div className="min-h-screen bg-cream py-12">
+    <div className="relative min-h-screen bg-cream py-12 overflow-hidden">
+      <FlowerPetals />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Our Menu</p>
-          <h1 className="text-4xl font-bold text-dark-brown">All Cakes</h1>
+          <h1 className="text-4xl font-dancing font-bold text-dark-brown">All Cakes</h1>
           <p className="text-gray-500 mt-2">Handcrafted with love in Asansol</p>
         </div>
 

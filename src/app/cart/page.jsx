@@ -2,11 +2,23 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity, subtotal, totalItems } = useCart();
+  const { isLoggedIn } = useAuth();
+  const router = useRouter();
   const deliveryCharge = subtotal > 0 ? (subtotal >= 500 ? 0 : 50) : 0;
   const total = subtotal + deliveryCharge;
+
+  const handleCheckout = () => {
+    if (isLoggedIn) {
+      router.push("/checkout");
+    } else {
+      router.push("/login?redirect=/cart");
+    }
+  };
 
   if (cartItems.length === 0) {
     return (
@@ -89,12 +101,12 @@ export default function CartPage() {
                   <span className="text-primary">₹{total}</span>
                 </div>
               </div>
-              <Link
-                href="/checkout"
+              <button
+                onClick={handleCheckout}
                 className="mt-6 block w-full bg-primary hover:bg-primary-dark text-white text-center py-3 rounded-xl font-semibold transition-colors duration-200"
               >
                 Proceed to Checkout
-              </Link>
+              </button>
               <Link href="/cakes" className="mt-3 block w-full text-center text-sm text-gray-400 hover:text-primary transition-colors">
                 Continue Shopping
               </Link>

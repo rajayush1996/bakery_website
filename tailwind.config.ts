@@ -21,6 +21,7 @@ const config: Config = {
       fontFamily: {
         heading: ["Georgia", "serif"],
         dancing: ["Dancing Script", "cursive"],
+        body: ["Poppins", "Arial", "Helvetica", "sans-serif"],
       },
     },
   },

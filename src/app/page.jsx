@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import CakeCard from "@/components/CakeCard";
+import FlowerPetals from "@/components/FlowerPetals";
 import { cakes, categories } from "@/data/cakes";
 import { testimonials } from "@/data/testimonials";
 
@@ -19,7 +20,8 @@ export default function HomePage() {
       <HeroCarousel />
 
       {/* Featured Cakes */}
-      <section className="py-16 bg-cream">
+      <section className="relative py-16 bg-cream overflow-hidden">
+        <FlowerPetals />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -30,7 +32,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Our Specialties</p>
-            <h2 className="text-4xl font-bold text-dark-brown mb-3">Featured Cakes</h2>
+            <h2 className="text-4xl font-dancing font-bold text-dark-brown mb-3">Featured Cakes</h2>
             <p className="text-gray-500 max-w-md mx-auto">Handpicked bestsellers loved by our Asansol community</p>
           </motion.div>
 
@@ -69,7 +71,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Browse By</p>
-            <h2 className="text-4xl font-bold text-dark-brown">Categories</h2>
+            <h2 className="text-4xl font-dancing font-bold text-dark-brown">Categories</h2>
           </motion.div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((cat, i) => (
@@ -96,7 +98,8 @@ export default function HomePage() {
       </section>
 
       {/* Why Us */}
-      <section className="py-16 bg-cream">
+      <section className="relative py-16 bg-cream overflow-hidden">
+        <FlowerPetals />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -107,7 +110,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Why Choose Us</p>
-            <h2 className="text-4xl font-bold text-dark-brown">Baked with Passion</h2>
+            <h2 className="text-4xl font-dancing font-bold text-dark-brown">Baked with Passion</h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -146,7 +149,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Happy Customers</p>
-            <h2 className="text-4xl font-bold text-dark-brown">What Asansol Says</h2>
+            <h2 className="text-4xl font-dancing font-bold text-dark-brown">What Asansol Says</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.slice(0, 3).map((t, i) => (
@@ -188,7 +191,7 @@ export default function HomePage() {
           variants={fadeUp}
           className="max-w-3xl mx-auto px-4 text-center"
         >
-          <h2 className="text-4xl font-bold mb-4">Ready to Order Your Dream Cake?</h2>
+          <h2 className="text-4xl font-dancing font-bold mb-4">Ready to Order Your Dream Cake?</h2>
           <p className="text-pink-100 text-lg mb-8">
             Place your order today and get freshly baked goodness delivered to your door in Asansol.
           </p>

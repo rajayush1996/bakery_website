@@ -57,4 +57,46 @@ This repository includes a GitHub Actions workflow (`.github/workflows/vercel-de
    | `VERCEL_ORG_ID`     | The `orgId` from `.vercel/project.json`        |
    | `VERCEL_PROJECT_ID` | The `projectId` from `.vercel/project.json`    |
 
-3. After saving all three secrets, the pipeline is ready — the next push or pull request to `master` will trigger a deployment.
+3. After saving all three secrets, the pipeline is ready.
+
+### Step 4 — Deploy
+
+Once the secrets are in place, deployments are **fully automatic** — no manual steps needed.
+
+#### Preview deployment (pull request)
+
+1. Create a feature branch and push your changes:
+   ```bash
+   git checkout -b my-feature
+   # ... make your changes ...
+   git add .
+   git commit -m "Add my feature"
+   git push origin my-feature
+   ```
+2. Open a **Pull Request** targeting the `master` branch on GitHub.
+3. The workflow will automatically:
+   - Lint and build the project
+   - Deploy a **preview** version to Vercel
+   - Post the preview URL in the PR's **Environments** section
+
+#### Production deployment (push to master)
+
+1. Merge your pull request into `master` (or push directly to `master`).
+2. The workflow will automatically:
+   - Lint and build the project
+   - Deploy the **production** version to Vercel
+   - The production URL appears in the **Environments** section of the commit
+
+#### Checking deployment status
+
+- Go to the **Actions** tab in your GitHub repository to see all workflow runs.
+- Click on any run to view detailed logs for each step (lint, build, deploy).
+- The deployment URL is also available in **Settings → Environments** on your repository.
+
+#### Troubleshooting
+
+| Symptom | Fix |
+|---------|-----|
+| Workflow fails at "Pull Vercel environment" | Double-check that `VERCEL_TOKEN`, `VERCEL_ORG_ID`, and `VERCEL_PROJECT_ID` are set correctly in repository secrets. |
+| Workflow fails at "Lint" or "Build" | The code has errors — fix them locally with `npm run lint` and `npm run build`, then push again. |
+| Workflow never runs | Make sure the branch targets `master` (for PRs) or you pushed to `master` (for production). |

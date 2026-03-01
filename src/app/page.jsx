@@ -60,7 +60,8 @@ export default function HomePage() {
       </section>
 
       {/* Categories */}
-      <section id="categories" className="py-16 bg-white">
+      <section id="categories" className="relative py-16 bg-white overflow-hidden">
+        <FlowerPetals />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -138,7 +139,8 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-white">
+      <section className="relative py-16 bg-white overflow-hidden">
+        <FlowerPetals />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"

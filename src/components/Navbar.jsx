@@ -24,8 +24,8 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl">🎂</span>
             <div>
-              <span className="font-bold text-primary text-lg leading-none block">Sweet Moments</span>
-              <span className="text-xs text-secondary-light">Asansol Bakery</span>
+              <span className="font-semibold text-dark-brown text-lg leading-none block tracking-tight">Sweet Moments</span>
+              <span className="text-[11px] text-secondary-light tracking-wide uppercase">Bakery · Asansol</span>
             </div>
           </Link>
 

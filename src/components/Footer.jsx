@@ -10,8 +10,8 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-3xl">🎂</span>
               <div>
-                <span className="font-bold text-xl text-accent leading-none block">Sweet Moments</span>
-                <span className="text-xs text-gray-400">Asansol Bakery</span>
+                <span className="font-semibold text-xl text-white leading-none block tracking-tight">Sweet Moments</span>
+                <span className="text-xs text-gray-400 uppercase tracking-wide">Bakery · Asansol</span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">

@@ -14,9 +14,9 @@ export default function CakeCard({ cake }) {
 
   return (
     <motion.div
-      whileHover={{ y: -4, scale: 1.02 }}
+      whileHover={{ y: -4, scale: 1.01 }}
       transition={{ duration: 0.2 }}
-      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group border border-gray-100"
     >
       <Link href={`/cake/${cake.id}`}>
         <div className="relative overflow-hidden h-52">
@@ -26,7 +26,7 @@ export default function CakeCard({ cake }) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute top-3 left-3">
-            <span className="bg-primary text-white text-xs px-2 py-1 rounded-full font-medium">
+            <span className="bg-dark-brown/80 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">
               {cake.category}
             </span>
           </div>
@@ -34,7 +34,7 @@ export default function CakeCard({ cake }) {
       </Link>
       <div className="p-4">
         <Link href={`/cake/${cake.id}`}>
-          <h3 className="font-semibold text-dark-brown text-lg mb-1 hover:text-primary transition-colors line-clamp-1">
+          <h3 className="font-semibold text-dark-brown text-base mb-1 hover:text-primary transition-colors line-clamp-1">
             {cake.name}
           </h3>
         </Link>
@@ -44,7 +44,7 @@ export default function CakeCard({ cake }) {
             {"★".repeat(Math.floor(cake.rating))}
             {"☆".repeat(5 - Math.floor(cake.rating))}
           </div>
-          <span className="text-gray-500 text-xs">({cake.reviews})</span>
+          <span className="text-gray-400 text-xs">({cake.reviews})</span>
         </div>
         <div className="flex items-center justify-between">
           <div>

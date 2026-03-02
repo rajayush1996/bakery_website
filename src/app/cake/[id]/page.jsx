@@ -57,11 +57,14 @@ export default function CakeDetailPage({ params }) {
             transition={{ duration: 0.5 }}
           >
             <span className="bg-light-pink text-primary text-xs px-3 py-1 rounded-full font-medium">{cake.category}</span>
-            <h1 className="text-3xl font-bold text-dark-brown mt-3 mb-2">{cake.name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-dark-brown mt-3 mb-2">{cake.name}</h1>
 
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex text-accent">{"★".repeat(Math.floor(cake.rating))}</div>
-              <span className="text-gray-500 text-sm">{cake.rating} ({cake.reviews} reviews)</span>
+              <div className="flex items-center gap-1 bg-green-50 rounded-full px-2.5 py-1">
+                <span className="text-accent text-sm">★</span>
+                <span className="text-dark-brown text-sm font-semibold">{cake.rating}</span>
+              </div>
+              <span className="text-gray-500 text-sm">({cake.reviews} reviews)</span>
             </div>
 
             <p className="text-gray-600 leading-relaxed mb-6">{cake.description}</p>

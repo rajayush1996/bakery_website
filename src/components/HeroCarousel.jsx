@@ -126,16 +126,16 @@ export default function HeroCarousel() {
                   </div>
                 )}
 
-                <div className="flex flex-wrap gap-3 sm:gap-4">
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
                   <Link
                     href={slide.ctaLink}
-                    className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-9 py-2.5 sm:py-3.5 rounded-full font-bold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg"
+                    className="bg-primary hover:bg-primary-dark text-white px-4 sm:px-9 py-2 sm:py-3.5 rounded-full font-bold text-xs sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg"
                   >
                     {slide.cta}
                   </Link>
                   <Link
                     href="/#categories"
-                    className="border-2 border-white/80 text-white px-6 sm:px-9 py-2.5 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base hover:bg-white hover:text-dark-brown transition-all duration-300"
+                    className="border-2 border-white/80 text-white px-4 sm:px-9 py-2 sm:py-3.5 rounded-full font-semibold text-xs sm:text-base hover:bg-white hover:text-dark-brown transition-all duration-300"
                   >
                     Explore Menu
                   </Link>

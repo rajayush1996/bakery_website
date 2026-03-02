@@ -50,7 +50,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/cakes" className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 inline-block">
+            <Link href="/cakes" className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 inline-block">
               View All Cakes
             </Link>
           </div>
@@ -188,15 +188,15 @@ export default function HomePage() {
           variants={fadeUp}
           className="max-w-3xl mx-auto px-4 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4">Ready to Order Your Dream Cake?</h2>
-          <p className="text-pink-100 text-lg mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold mb-4">Ready to Order Your Dream Cake?</h2>
+          <p className="text-pink-100 text-base sm:text-lg mb-6 sm:mb-8">
             Place your order today and get freshly baked goodness delivered to your door in Asansol.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/cakes" className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-cream transition-all duration-300 hover:scale-105 inline-block">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Link href="/cakes" className="bg-white text-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-cream transition-all duration-300 hover:scale-105 inline-block">
               Order Now
             </Link>
-            <a href="tel:+919876543210" className="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+            <a href="tel:+919876543210" className="border-2 border-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-white hover:text-primary transition-all duration-300">
               📞 Call Us
             </a>
           </div>

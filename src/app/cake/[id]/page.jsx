@@ -92,22 +92,22 @@ export default function CakeDetailPage({ params }) {
 
             {/* Price */}
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-bold text-primary">₹{selectedWeight.price * quantity}</span>
+              <span className="text-3xl sm:text-4xl font-bold text-primary">₹{selectedWeight.price * quantity}</span>
               <span className="text-gray-400 text-sm">for {selectedWeight.label}</span>
             </div>
 
             {/* Quantity */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-3 sm:gap-4 mb-8">
               <span className="text-sm font-medium text-dark-brown">Quantity:</span>
               <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
+                  className="px-3 sm:px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
                 >-</button>
-                <span className="px-6 py-2 font-semibold text-dark-brown">{quantity}</span>
+                <span className="px-4 sm:px-6 py-2 font-semibold text-dark-brown">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
+                  className="px-3 sm:px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
                 >+</button>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function CakeDetailPage({ params }) {
             <motion.button
               whileTap={{ scale: 0.97 }}
               onClick={handleAddToCart}
-              className={`w-full py-4 rounded-2xl font-semibold text-lg transition-all duration-300 ${
+              className={`w-full py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg transition-all duration-300 ${
                 added
                   ? "bg-green-500 text-white"
                   : "bg-primary hover:bg-primary-dark text-white hover:shadow-lg"

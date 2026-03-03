@@ -57,11 +57,14 @@ export default function CakeDetailPage({ params }) {
             transition={{ duration: 0.5 }}
           >
             <span className="bg-light-pink text-primary text-xs px-3 py-1 rounded-full font-medium">{cake.category}</span>
-            <h1 className="text-3xl font-bold text-dark-brown mt-3 mb-2">{cake.name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-dark-brown mt-3 mb-2">{cake.name}</h1>
 
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex text-accent">{"★".repeat(Math.floor(cake.rating))}</div>
-              <span className="text-gray-500 text-sm">{cake.rating} ({cake.reviews} reviews)</span>
+              <div className="flex items-center gap-1 bg-green-50 rounded-full px-2.5 py-1">
+                <span className="text-accent text-sm">★</span>
+                <span className="text-dark-brown text-sm font-semibold">{cake.rating}</span>
+              </div>
+              <span className="text-gray-500 text-sm">({cake.reviews} reviews)</span>
             </div>
 
             <p className="text-gray-600 leading-relaxed mb-6">{cake.description}</p>
@@ -89,22 +92,22 @@ export default function CakeDetailPage({ params }) {
 
             {/* Price */}
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-bold text-primary">₹{selectedWeight.price * quantity}</span>
+              <span className="text-3xl sm:text-4xl font-bold text-primary">₹{selectedWeight.price * quantity}</span>
               <span className="text-gray-400 text-sm">for {selectedWeight.label}</span>
             </div>
 
             {/* Quantity */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-3 sm:gap-4 mb-8">
               <span className="text-sm font-medium text-dark-brown">Quantity:</span>
               <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
+                  className="px-3 sm:px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
                 >-</button>
-                <span className="px-6 py-2 font-semibold text-dark-brown">{quantity}</span>
+                <span className="px-4 sm:px-6 py-2 font-semibold text-dark-brown">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
+                  className="px-3 sm:px-4 py-2 bg-gray-50 hover:bg-gray-100 text-dark-brown font-bold text-lg transition-colors"
                 >+</button>
               </div>
             </div>
@@ -113,7 +116,7 @@ export default function CakeDetailPage({ params }) {
             <motion.button
               whileTap={{ scale: 0.97 }}
               onClick={handleAddToCart}
-              className={`w-full py-4 rounded-2xl font-semibold text-lg transition-all duration-300 ${
+              className={`w-full py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg transition-all duration-300 ${
                 added
                   ? "bg-green-500 text-white"
                   : "bg-primary hover:bg-primary-dark text-white hover:shadow-lg"

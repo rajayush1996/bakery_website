@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import CakeCard from "@/components/CakeCard";
-import FlowerPetals from "@/components/FlowerPetals";
 import { cakes, categories } from "@/data/cakes";
 import { testimonials } from "@/data/testimonials";
 
@@ -21,7 +20,6 @@ export default function HomePage() {
 
       {/* Featured Cakes */}
       <section className="relative py-16 bg-cream overflow-hidden">
-        <FlowerPetals />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -32,7 +30,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Our Specialties</p>
-            <h2 className="text-4xl font-dancing font-bold text-dark-brown mb-3">Featured Cakes</h2>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-dark-brown mb-3">Featured Cakes</h2>
             <p className="text-gray-500 max-w-md mx-auto">Handpicked bestsellers loved by our Asansol community</p>
           </motion.div>
 
@@ -52,7 +50,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/cakes" className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 inline-block">
+            <Link href="/cakes" className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 inline-block">
               View All Cakes
             </Link>
           </div>
@@ -60,7 +58,7 @@ export default function HomePage() {
       </section>
 
       {/* Categories */}
-      <section id="categories" className="py-16 bg-white">
+      <section id="categories" className="relative py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -71,7 +69,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Browse By</p>
-            <h2 className="text-4xl font-dancing font-bold text-dark-brown">Categories</h2>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-dark-brown">Categories</h2>
           </motion.div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((cat, i) => (
@@ -85,7 +83,7 @@ export default function HomePage() {
               >
                 <Link
                   href={`/cakes?category=${encodeURIComponent(cat.name)}`}
-                  className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-cream hover:bg-light-pink border border-transparent hover:border-primary transition-all duration-200 group"
+                  className="flex flex-col items-center gap-3 p-5 rounded-2xl bg-cream hover:bg-light-pink border border-gray-100 hover:border-primary/30 transition-all duration-200 group"
                 >
                   <span className="text-4xl group-hover:scale-110 transition-transform duration-200">{cat.icon}</span>
                   <span className="text-sm font-medium text-dark-brown text-center leading-tight">{cat.name}</span>
@@ -99,7 +97,6 @@ export default function HomePage() {
 
       {/* Why Us */}
       <section className="relative py-16 bg-cream overflow-hidden">
-        <FlowerPetals />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -110,7 +107,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Why Choose Us</p>
-            <h2 className="text-4xl font-dancing font-bold text-dark-brown">Baked with Passion</h2>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-dark-brown">Baked with Passion</h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -126,7 +123,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 variants={fadeUp}
-                className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="font-semibold text-dark-brown text-lg mb-2">{item.title}</h3>
@@ -138,7 +135,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-white">
+      <section className="relative py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -149,7 +146,7 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Happy Customers</p>
-            <h2 className="text-4xl font-dancing font-bold text-dark-brown">What Asansol Says</h2>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-dark-brown">What Our Customers Say</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.slice(0, 3).map((t, i) => (
@@ -160,7 +157,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 variants={fadeUp}
-                className="bg-cream rounded-2xl p-6 border border-pink-100"
+                className="bg-cream rounded-2xl p-6 border border-gray-100"
               >
                 <div className="flex text-accent text-lg mb-3">
                   {"★".repeat(t.rating)}
@@ -191,15 +188,15 @@ export default function HomePage() {
           variants={fadeUp}
           className="max-w-3xl mx-auto px-4 text-center"
         >
-          <h2 className="text-4xl font-dancing font-bold mb-4">Ready to Order Your Dream Cake?</h2>
-          <p className="text-pink-100 text-lg mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold mb-4">Ready to Order Your Dream Cake?</h2>
+          <p className="text-pink-100 text-base sm:text-lg mb-6 sm:mb-8">
             Place your order today and get freshly baked goodness delivered to your door in Asansol.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/cakes" className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-cream transition-all duration-300 hover:scale-105 inline-block">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Link href="/cakes" className="bg-white text-primary px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-cream transition-all duration-300 hover:scale-105 inline-block">
               Order Now
             </Link>
-            <a href="tel:+919876543210" className="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+            <a href="tel:+919876543210" className="border-2 border-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-white hover:text-primary transition-all duration-300">
               📞 Call Us
             </a>
           </div>

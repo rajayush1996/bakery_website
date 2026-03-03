@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CakeCard from "@/components/CakeCard";
-import FlowerPetals from "@/components/FlowerPetals";
 import { cakes, categories } from "@/data/cakes";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -24,11 +23,10 @@ function CakesContent() {
 
   return (
     <div className="relative min-h-screen bg-cream py-12 overflow-hidden">
-      <FlowerPetals />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Our Menu</p>
-          <h1 className="text-4xl font-dancing font-bold text-dark-brown">All Cakes</h1>
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-dark-brown">All Cakes</h1>
           <p className="text-gray-500 mt-2">Handcrafted with love in Asansol</p>
         </div>
 
@@ -38,7 +36,7 @@ function CakesContent() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
                   ? "bg-primary text-white shadow-md"
                   : "bg-white text-dark-brown border border-gray-200 hover:border-primary hover:text-primary"
